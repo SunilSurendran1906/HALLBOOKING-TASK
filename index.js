@@ -1,8 +1,7 @@
 const express = require("express");
 const server = express();
-const mongoose = require("mongoose");
 
-const PORT = process.env.PORT || 3500;
+const PORT =3500;
 server.use(express.json());
 
 let rooms = [];
@@ -104,7 +103,7 @@ server.get("/customers/:customer_name/bookings", (req, res) => {
   res.json({ bookings: customerBookings });
 });
 
-server.listen(PORT, "localhost", (err) => {
+server.listen(PORT,"0.0.0.0" , (err) => {
   if (err) {
     console.log(`Error in Running the port:${PORT}`);
   } else {
